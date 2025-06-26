@@ -1,0 +1,27 @@
+.todo{
+    display: flex;
+    flex-direction: row  ;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgb(0, 0, 0);
+    padding :  7px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.todo-icons{
+    font-size: 20px;
+    margin-right: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.todo-input1{
+  width: 500px;
+  padding: 10px 0px;
+  border: none;
+  border-bottom: 1px solid gray;
+  outline: none;
+  border-radius: 10px;
+}

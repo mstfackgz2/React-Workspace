@@ -1,0 +1,95 @@
+.currency-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+
+    width: 800px;
+    height: 300px;
+    
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(5px); 
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3); 
+}
+.currency-converter{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.title{
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.amount, .result{
+    height: 50px;
+    width: 150px;
+    margin-right: 10px;
+    border-radius: 40px;
+    text-align: center;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0; 
+}
+
+
+.from-currency, .to-currency{
+    height: 50px;
+    width: 150px;
+    margin-right: 10px;
+    border-radius: 20px;
+    text-align: center;
+
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+
+
+}
+.arrow{
+    margin-right: 10px;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    
+}
+
+.arrow:hover{
+    transform: scale(1.1);
+}
+.convert-button{
+    margin: 20px;
+   
+}
+.convert-button button{
+    margin: 20px;
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.convert-button button:hover{
+    transform: scale(1.1); 
+    background-color: gray;
+    color: white;
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+    border: none;
+}
