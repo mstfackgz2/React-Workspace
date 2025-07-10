@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../css/Header.css";
 import { MdDarkMode } from "react-icons/md";
 import { IoIosSunny } from "react-icons/io";
 import { FaBasketShopping } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
+import { Badge } from "@mui/material";
+import { useDispatch, useSelector } from "react-redux";
+import { setDrawer } from "../redux/slices/basketSlice";
 
 function Header() {
   const [theme, setTheme] = useState(true);
-
+  const navigate = useNavigate();
+  const { products } = useSelector((store) => store.basket);
+  const dispatch = useDispatch();
   const chanegeTheme = () => {
     const root = document.querySelector(":root");
     if (theme) {
@@ -21,8 +27,13 @@ function Header() {
   return (
     <div className="header">
       <div className="header-logo">
-        <img className="logo" src="./src/images/logo.png" alt="" />
-        <p className="logo-text">Aramaci A.S.</p>
+        <img
+          onClick={() => navigate("/")}
+          className="logo"
+          src="./src/images/logo.png"
+          alt=""
+        />
+        <p className="logo-text">Gel Bak Al</p>
       </div>
 
       <div className="header-search">
@@ -32,14 +43,25 @@ function Header() {
           type="text"
         />
 
-        <div>
-          {theme ? (
-            <MdDarkMode onClick={chanegeTheme} className="icon" />
-          ) : (
-            <IoIosSunny onClick={chanegeTheme} className="icon" />
-          )}
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <div className="icon-wrapper">
+            {theme ? (
+              <MdDarkMode onClick={chanegeTheme} className="icon" />
+            ) : (
+              <IoIosSunny onClick={chanegeTheme} className="icon" />
+            )}
+          </div>
 
-          <FaBasketShopping className="icon" />
+          <div className="icon-wrapper">
+            <Badge
+              anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+              badgeContent={products.length}
+              color="secondary"
+              onClick={() => dispatch(setDrawer())}
+            >
+              <FaBasketShopping className="icon" />
+            </Badge>
+          </div>
         </div>
       </div>
     </div>

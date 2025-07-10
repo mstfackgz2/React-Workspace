@@ -48,7 +48,14 @@
 }
 
 .icon{
-     font-size: 25px;
-     cursor: pointer;
-     margin-left:10px ;
+    font-size: 25px;
+    cursor: pointer;
+    margin-left:10px ;
+    vertical-align: middle;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
